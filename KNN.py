@@ -8,3 +8,9 @@ import matplotlib.ticker as ticker
 from sklearn import preprocessing
 %matplotlib inline
 
+df = pd.read_csv(teleCust1000f.csv)
+df.head()
+
+
+
+
