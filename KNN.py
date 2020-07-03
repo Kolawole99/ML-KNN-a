@@ -45,3 +45,8 @@ df.columns
 X = df[['region', 'tenure','age', 'marital', 'address', 'income', 'ed', 'employ','retire', 'gender', 'reside']] .values.astype(float)
 X[0:5]
 #print(X)
+#Defining the labels or the value we will predict.
+y = df['custcat'].values
+y[0:5]
+
+#==================================Normalizing the Data =====================================
