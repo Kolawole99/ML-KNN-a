@@ -11,6 +11,7 @@ import matplotlib.ticker as ticker
 from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn import metrics
 #%matplotlib inline  #this is necessary in jupyter notebooks not Visual Studio Code, PC terminal or IDE's.
 
 #========================================== TARGET DECLARATION===============================
@@ -64,7 +65,7 @@ print ('Train set:', X_train.shape,  y_train.shape)
 print ('Test set:', X_test.shape,  y_test.shape)
 
 
-#===============================CLASSIFICATION WITH KNN========================================
+#====================================CLASSIFICATION WITH KNN===================================
 
 #=====================================Training the algorithm==========================
 #lets initialize at 4
@@ -76,5 +77,14 @@ neigh
 #===============================Predicting with the trained algorithm=============================
 yhat = neigh.predict(X_test)
 yhat[0:5]
-print(yhat)
+#print(yhat)
+
+
+#======================================ACCURACY EVALUATION====================================
+
+#=====using accuracy classification score(equals the jaccard_similarity_score) it computes subset accuracy=====
+print("Train set Accuracy: ", metrics.accuracy_score(y_train, neigh.predict(X_train)))
+print("Test set Accuracy: ", metrics.accuracy_score(y_test, yhat))
+
+#------DO NOT FORGET: Higher the Jaccard score higher the accuracy of the classifier.------
 
