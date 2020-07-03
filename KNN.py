@@ -20,6 +20,7 @@ from sklearn import preprocessing
 df = pd.read_csv("./teleCust1000t.csv")
 datashow = df.head()
 print(datashow)
+
 #=============================Data visualization and analysis====================================
 #we count how many different outcome classes are available in the custcat field
 valuecounts = df['custcat'].value_counts()
@@ -38,5 +39,9 @@ income = df['income']
 plt.hist(income, bins=50)
 #plt.show()
 
-#===========================Defining the feature set==========================
+#=================================Defining the feature set====================================
 df.columns
+#To use scikit-learn library, we have to convert the Pandas data frame to a Numpy array
+X = df[['region', 'tenure','age', 'marital', 'address', 'income', 'ed', 'employ','retire', 'gender', 'reside']] .values.astype(float)
+X[0:5]
+#print(X)
