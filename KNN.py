@@ -73,6 +73,8 @@ k = 4
 neigh = KNeighborsClassifier(n_neighbors = k).fit(X_train,y_train)
 neigh
 
-
-
+#===============================Predicting with the trained algorithm=============================
+yhat = neigh.predict(X_test)
+yhat[0:5]
+print(yhat)
 
