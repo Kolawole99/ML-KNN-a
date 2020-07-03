@@ -1,3 +1,5 @@
+#=====================================PACKAGES AND DATA FORMATTING=================================
+
 #==========================Importing needed packages and libraries======================
 import itertools
 import numpy as np
@@ -8,6 +10,7 @@ import numpy as np
 import matplotlib.ticker as ticker
 from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
 #%matplotlib inline  #this is necessary in jupyter notebooks not Visual Studio Code, PC terminal or IDE's.
 
 #========================================== TARGET DECLARATION===============================
@@ -53,5 +56,15 @@ y[0:5]
 #====================================Normalizing the Data =====================================
 X = preprocessing.StandardScaler().fit(X).transform(X.astype(float))
 X[0:5]
-print(X)
+#print(X)
+
+#========================================Train/Test Split=====================================
+X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.2, random_state=4)
+print ('Train set:', X_train.shape,  y_train.shape)
+print ('Test set:', X_test.shape,  y_test.shape)
+
+
+
+
+
 
