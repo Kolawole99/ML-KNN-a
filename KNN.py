@@ -9,6 +9,7 @@ import matplotlib.ticker as ticker
 from sklearn import preprocessing
 #%matplotlib inline  #this is necessary in jupyter notebooks not Visual Studio Code, PC terminal or IDE's.
 
+#========================================== TARGET DECLARATION===============================
 # The target field, called custcat, has four possible values that correspond to the four customer groups, as follows:
 #  1- Basic Service 
 #  2- E-Service 
@@ -32,6 +33,10 @@ plt.hist(tenure, bins=72)
 #we also plot an histogram of the data at the age column
 age = df['age']
 plt.hist(age, bins=10)
+#we also plot an histogram of the data at the income column
+income = df['income']
+plt.hist(income, bins=50)
+#plt.show()
 
-
-
+#===========================Defining the feature set==========================
+df.columns
