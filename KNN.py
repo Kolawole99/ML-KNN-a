@@ -64,6 +64,14 @@ print ('Train set:', X_train.shape,  y_train.shape)
 print ('Test set:', X_test.shape,  y_test.shape)
 
 
+#===============================CLASSIFICATION WITH KNN========================================
+
+#=====================================Training the algorithm==========================
+#lets initialize at 4
+k = 4
+#Train the Model  
+neigh = KNeighborsClassifier(n_neighbors = k).fit(X_train,y_train)
+neigh
 
 
 
