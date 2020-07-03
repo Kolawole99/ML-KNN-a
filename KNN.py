@@ -7,6 +7,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.ticker as ticker
 from sklearn import preprocessing
+from sklearn.model_selection import train_test_split
 #%matplotlib inline  #this is necessary in jupyter notebooks not Visual Studio Code, PC terminal or IDE's.
 
 #========================================== TARGET DECLARATION===============================
@@ -49,4 +50,8 @@ X[0:5]
 y = df['custcat'].values
 y[0:5]
 
-#==================================Normalizing the Data =====================================
+#====================================Normalizing the Data =====================================
+X = preprocessing.StandardScaler().fit(X).transform(X.astype(float))
+X[0:5]
+print(X)
+
