@@ -69,7 +69,7 @@ print ('Test set:', X_test.shape,  y_test.shape)
 
 #=====================================Training the algorithm==========================
 #lets initialize at 4
-k = 4
+k = 9
 #Train the Model  
 neigh = KNeighborsClassifier(n_neighbors = k).fit(X_train,y_train)
 neigh
@@ -96,7 +96,7 @@ Ks = 10
 mean_acc = np.zeros((Ks-1))
 
 std_acc = np.zeros((Ks-1))
-ConfustionMx = [];
+ConfustionMx = []
 for n in range(1,Ks):
     
     #Train Model 
@@ -123,7 +123,5 @@ print( "The best accuracy was with", mean_acc.max(), "with k=", mean_acc.argmax(
 #The best accuracy was with 0.34 with k= 9
 
 #End of project. I tried with K = 20 and K = 10, with K = 20, the best value was from K = 16, and the difference between it and K = 10 with the best at K = 9 is just 2. I choose K = 10.
-
-
 
 
